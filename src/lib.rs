@@ -317,7 +317,7 @@ type w32 = w<u32>;
 pub trait Rand : Sized {
     /// Generates a random instance of this type using the specified source of
     /// randomness.
-    fn rand<R: Rng>(rng: &mut R) -> Self;
+    fn rand<R: Rng + ?Sized>(rng: &mut R) -> Self;
 }
 
 /// A random number generator.
